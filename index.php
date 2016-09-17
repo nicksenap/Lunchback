@@ -78,7 +78,8 @@ WHERE table2.user_id = ".$_GET['user_id']."
 ORDER BY masterId LIMIT 30";
 */
 
-$sql_1 = "SELECT masterId, concat(lunchback_user_profiles.first_name,' ',lunchback_user_profiles.last_name) as masterName, lunchback_user_profiles.headline FROM (
+$sql_1 = "SELECT masterId, concat(lunchback_user_profiles.first_name,' ',lunchback_user_profiles.last_name) as masterName, lunchback_user_profiles.headline, 
+lunchback_user_profiles.base_city as masterLocation FROM (
 
 SELECT masterId,candidateId FROM (
 SELECT DISTINCT t1.user_id as masterId,
@@ -116,16 +117,19 @@ AND masterId = lunchback_user_profiles.id
 UNION
 SELECt DISTINCT h1.target_id as masterId ,
                 concat(p.first_name,' ',p.last_name) as masterName,
-                p.headline
+                p.headline, p.base_city as masterLocation 
 FROM lunchback_view_history h1, lunchback_view_history h2,lunchback_user_profiles p
 WHERE h1.user_id = ".$_GET['user_id']."
       AND h2.user_id = h1.target_id
       AND h2.target_id = h1.user_id
       AND p.id = h1.target_id
+      AND h1.user_id != h1.target_id
 ";
 
 $sql_2 = "SELECT CONCAT(first_name,' ',last_name) as clename  FROM Lunchback.lunchback_user_profiles
 WHERE id = ".$_GET['user_id'];
+
+
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -134,19 +138,23 @@ if ($conn->connect_error) {
 $result = $conn->query($sql_1);
 $result2 = $conn->query($sql_2);
 
+
 /*
 if (!$result) {
     echo 'Could not run query: '.printf($result->num_rows);
     exit;}
 */
 
+if($result2->num_rows != 0) {
+    $rows= $result2->fetch_assoc();
+    $Clname = $rows["clename"];
+    echo "<p class=\"lead\"> Hey $Clname! </p>";}
 
 if($result->num_rows != 0) {
     $rows= $result->fetch_assoc();
-    $Cname = $rows["candidateName"];
-    $Base = $rows["cadidateLocation"];
-    echo "  <!--<p class=\"lead\"> Hey $Cname!</p>
-            <p class=\"lead\">  Here are some cool people who work in $Base that we would recommend you to have lunch with: </p> -->
+    $Base = $rows["masterLocation"];
+    echo "  
+            <p class=\"lead\">  Here are some cool people who work in $Base that we would recommend you to have lunch with: </p> 
             <table class=\"table table-striped table-hover \" style=\"width:100%\">
             <tr class=\"info\">
             <th>Name</th>
