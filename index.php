@@ -13,7 +13,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Magic Lunch Matching</a>
+                <a class="navbar-brand" href="http://localhost:63342/www3/index.php">Magic Lunch Matching</a>
             </div>
 
         </div>
@@ -48,35 +48,6 @@ $password = "root";
 $conn = new mysqli($servername, $username, $password,'Lunchback');
 $conn->set_charset("utf8");
 //printf($conn->character_set_name());
-
-/*
-$sql_1 = "SELECT DISTINCT 
-  table1.user_id as masterId,
-  concat(p1.first_name,' ',p1.last_name) as masterName,
-  p1.headline,
-  table2.tag as searching,
-  concat(p2.first_name,' ',p2.last_name) as candidateName,
-  p2.base_city as cadidateLocation
-
-
-FROM lunchback_user_tags table1 JOIN lunchback_user_tags table2
-  JOIN lunchback_user_profiles p1 JOIN lunchback_user_profiles p2
-
-WHERE table2.user_id = ".$_GET['user_id']."
-      AND table1.user_id != table2.user_id
-      AND table1.tag_type = 'offering'
-      AND table2.tag_type = 'searching'
-      AND table1.tag = table2.tag
-      AND p1.id = table1.user_id
-      AND p2.id = table2.user_id
-      AND table2.tag = table1.tag
-      AND p1.base_city = p2.base_city
-      AND p1.removed = 0
-      AND p2.removed = 0
-      AND table1.removed = 0
-      AND table2.removed = 0
-ORDER BY masterId LIMIT 30";
-*/
 
 $sql_1 = "SELECT masterId, concat(lunchback_user_profiles.first_name,' ',lunchback_user_profiles.last_name) as masterName, lunchback_user_profiles.headline, 
 lunchback_user_profiles.base_city as masterLocation FROM (
@@ -175,7 +146,7 @@ if($result->num_rows != 0) {
 }else {
     $rows= $result2->fetch_assoc();
     $Clname = $rows["clename"];
-    echo "<p class=\"lead\"> Hey $Clname! </p>";
+    echo "<p class=\"lead\"></p>";
     echo "<p class=\"lead\">Unfortunately we can't find a match for you right now, but please keep in touch :D </p>";
     //echo $_GET['user_id'];
 
