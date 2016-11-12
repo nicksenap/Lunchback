@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>Test</title>
+</head>
+
+<body bgcolor="white">
+
+<?
+  $link = pg_Connect("host=localhost port=8888 user=root password=root dbname=recitationreport");
+  $result = pg_exec($link, "select * from student");
+  $numrows = pg_numrows($result);?>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>PWD</th>
+    </tr>
+    <?
+
+   // Loop on rows in the result set.
+
+   for($ri = 0; $ri < $numrows; $ri++) {
+    echo "<tr>\n";
+    $row = pg_fetch_array($result, $ri);
+    echo " <td>", $row["ID"], "</td>
+    <td>", $row["name"], "</td>
+    <td>", $row["password"], "</td>
+    </tr>
+    ";
+    }
+    pg_close($link);
+    ?>
+</table>
+
+</body>
+
+</html>

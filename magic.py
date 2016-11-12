@@ -29,7 +29,11 @@ for id in idlist:
 	temp_list = []
 	cursor.execute(query, id)
 	for (masterId, masterName,headline,masterLocation,candidateId) in cursor:
-		temp_list.append(masterId)
+        if masterId in idlist:
+            print('ok')
+		  temp_list.append(masterId)
+        else:
+            print('Nej')
 	target_list.append(temp_list)
 
 for i in range(len(target_list)): t_list.append([idlist[i],target_list[i]])
