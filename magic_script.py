@@ -129,10 +129,10 @@ def main():
 
 	flag = True
 	while flag:
-		choose = raw_input('Do you want amount of matches or the full result? (A/F) or Q for Quit:   ')
+		choose = raw_input('Data fetched, Do you want amount of matches or the full result? (A/F) or Q for Quit:   ')
 		if choose.upper() == 'A':
 			print('====================')
-			print('Premiere result:')
+			print('Premiere result (Pairs): ')
 			print('====================')
 			print(len(res))
 			print('====================')
