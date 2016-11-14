@@ -1,0 +1,2741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - vssf_core@127.0.0.1" uuid="cd504e91-90ff-4807-afc6-eafa937a844c">
+    <database-info product="MySQL" version="5.6.27-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="vssf_core">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="information_schema"/>
+      <table id="3" parent="1" name="application_support"/>
+      <table id="4" parent="1" name="applications"/>
+      <table id="5" parent="1" name="applications_services"/>
+      <table id="6" parent="1" name="applications_services_actions"/>
+      <table id="7" parent="1" name="applications_services_configs"/>
+      <table id="8" parent="1" name="applications_users"/>
+      <table id="9" parent="1" name="client_module_types"/>
+      <table id="10" parent="1" name="client_modules"/>
+      <table id="11" parent="1" name="lunchback_channel"/>
+      <table id="12" parent="1" name="lunchback_channel_category"/>
+      <table id="13" parent="1" name="lunchback_channel_code"/>
+      <table id="14" parent="1" name="lunchback_chat_history"/>
+      <table id="15" parent="1" name="lunchback_event_channel_map"/>
+      <table id="16" parent="1" name="lunchback_events"/>
+      <table id="17" parent="1" name="lunchback_events_requests"/>
+      <table id="18" parent="1" name="lunchback_feedbacks"/>
+      <table id="19" parent="1" name="lunchback_invite_code"/>
+      <table id="20" parent="1" name="lunchback_magic_status"/>
+      <table id="21" parent="1" name="lunchback_messages"/>
+      <table id="22" parent="1" name="lunchback_nova_user"/>
+      <table id="23" parent="1" name="lunchback_private_member"/>
+      <table id="24" parent="1" name="lunchback_requests"/>
+      <table id="25" parent="1" name="lunchback_search_history"/>
+      <table id="26" parent="1" name="lunchback_server_config"/>
+      <table id="27" parent="1" name="lunchback_statics"/>
+      <table id="28" parent="1" name="lunchback_supported_location"/>
+      <table id="29" parent="1" name="lunchback_tag_recommendation"/>
+      <table id="30" parent="1" name="lunchback_user_channel_map"/>
+      <table id="31" parent="1" name="lunchback_user_event_setting"/>
+      <table id="32" parent="1" name="lunchback_user_interested_user"/>
+      <table id="33" parent="1" name="lunchback_user_invited_by"/>
+      <table id="34" parent="1" name="lunchback_user_poke"/>
+      <table id="35" parent="1" name="lunchback_user_profiles"/>
+      <table id="36" parent="1" name="lunchback_user_profiles_extension"/>
+      <table id="37" parent="1" name="lunchback_user_recommendation"/>
+      <table id="38" parent="1" name="lunchback_user_skills"/>
+      <table id="39" parent="1" name="lunchback_user_status"/>
+      <table id="40" parent="1" name="lunchback_user_tags"/>
+      <table id="41" parent="1" name="lunchback_view_history"/>
+      <table id="42" parent="1" name="migration-newsletter"/>
+      <table id="43" parent="1" name="migrations"/>
+      <table id="44" parent="1" name="newsletter_lunchback_magic_promotion"/>
+      <table id="45" parent="1" name="newsletter_users_requested_for_code"/>
+      <table id="46" parent="1" name="newsletter_users_without_code_notification"/>
+      <table id="47" parent="1" name="newsletter_welcome_message"/>
+      <table id="48" parent="1" name="push_notifications"/>
+      <table id="49" parent="1" name="resources"/>
+      <table id="50" parent="1" name="services"/>
+      <table id="51" parent="1" name="sessions"/>
+      <table id="52" parent="1" name="temp_email"/>
+      <table id="53" parent="1" name="users"/>
+      <table id="54" parent="1" name="vssf_push_messages"/>
+      <view id="55" parent="1" name="user_do_not_have_any_lunch">
+        <comment>VIEW</comment>
+      </view>
+      <column id="56" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="57" parent="3" name="application_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="58" parent="3" name="application_support_version">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="59" parent="3" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="60" parent="3" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="61" parent="3" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="62" parent="3" name="application_support_application_id_foreign">
+        <columns>application_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="63" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="64" parent="3" name="application_support_application_id_foreign">
+        <columns>application_id</columns>
+        <ref-key>~.applications.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="65" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="66" parent="4" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="67" parent="4" name="description">
+        <mandatory>1</mandatory>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="68" parent="4" name="namespace">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="69" parent="4" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="70" parent="4" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="71" parent="4" name="applications_namespace_unique">
+        <columns>namespace</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="72" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="73" parent="4" name="applications_namespace_unique">
+        <columns>namespace</columns>
+        <underlying-index>applications_namespace_unique</underlying-index>
+      </key>
+      <column id="74" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="75" parent="5" name="application_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="76" parent="5" name="service_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="77" parent="5" name="implementation">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="78" parent="5" name="config">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="79" parent="5" name="permissions">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="80" parent="5" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="81" parent="5" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="82" parent="5" name="applications_services_application_id_foreign">
+        <columns>application_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="83" parent="5" name="applications_services_service_id_foreign">
+        <columns>service_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="84" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="85" parent="5" name="applications_services_application_id_foreign">
+        <columns>application_id</columns>
+        <ref-key>~.applications.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="86" parent="5" name="applications_services_service_id_foreign">
+        <columns>service_id</columns>
+        <ref-key>~.services.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="87" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="88" parent="6" name="app_serv_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="89" parent="6" name="action">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="90" parent="6" name="permissions">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="91" parent="6" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="92" parent="6" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="93" parent="6" name="applications_services_actions_app_serv_id_foreign">
+        <columns>app_serv_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="94" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="95" parent="6" name="applications_services_actions_app_serv_id_foreign">
+        <columns>app_serv_id</columns>
+        <ref-key>~.applications_services.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="96" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="97" parent="7" name="app_serv_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="98" parent="7" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="99" parent="7" name="type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="100" parent="7" name="value">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="101" parent="7" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="102" parent="7" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="103" parent="7" name="applications_services_configs_app_serv_id_foreign">
+        <columns>app_serv_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="104" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="105" parent="7" name="applications_services_configs_app_serv_id_foreign">
+        <columns>app_serv_id</columns>
+        <ref-key>~.applications_services.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="106" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="107" parent="8" name="application_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="108" parent="8" name="user_id">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="109" parent="8" name="installation_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="110" parent="8" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="111" parent="8" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="112" parent="8" name="applications_users_application_id_foreign">
+        <columns>application_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="113" parent="8" name="applications_users_installation_id_unique">
+        <columns>installation_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="114" parent="8" name="applications_users_user_id_foreign">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="115" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="116" parent="8" name="applications_users_installation_id_unique">
+        <columns>installation_id</columns>
+        <underlying-index>applications_users_installation_id_unique</underlying-index>
+      </key>
+      <foreign-key id="117" parent="8" name="applications_users_application_id_foreign">
+        <columns>application_id</columns>
+        <ref-key>~.applications.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="118" parent="8" name="applications_users_user_id_foreign">
+        <columns>user_id</columns>
+        <ref-key>~.users.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="119" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="120" parent="9" name="type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="121" parent="9" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="122" parent="9" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <key id="123" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="124" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="125" parent="10" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="126" parent="10" name="type_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="127" parent="10" name="resource_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="128" parent="10" name="app_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="129" parent="10" name="version">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="130" parent="10" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="131" parent="10" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="132" parent="10" name="client_modules_app_id_name_type_id_version_unique">
+        <columns>app_id
+name
+type_id
+version</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="133" parent="10" name="client_modules_resource_id_foreign">
+        <columns>resource_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="134" parent="10" name="client_modules_type_id_foreign">
+        <columns>type_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="135" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="136" parent="10" name="client_modules_app_id_name_type_id_version_unique">
+        <columns>app_id
+name
+type_id
+version</columns>
+        <underlying-index>client_modules_app_id_name_type_id_version_unique</underlying-index>
+      </key>
+      <foreign-key id="137" parent="10" name="client_modules_type_id_foreign">
+        <columns>type_id</columns>
+        <ref-key>~.client_module_types.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="138" parent="10" name="client_modules_resource_id_foreign">
+        <columns>resource_id</columns>
+        <ref-key>~.resources.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="139" parent="10" name="client_modules_app_id_foreign">
+        <columns>app_id</columns>
+        <ref-key>~.applications.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="140" parent="11" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="141" parent="11" name="owner_id">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="142" parent="11" name="channel_name">
+        <data-type>varchar(200)|0</data-type>
+      </column>
+      <column id="143" parent="11" name="channel_description">
+        <data-type>varchar(500)|0</data-type>
+      </column>
+      <column id="144" parent="11" name="channel_type">
+        <data-type>varchar(20)|0</data-type>
+        <default-expression>&apos;public&apos;</default-expression>
+      </column>
+      <column id="145" parent="11" name="channel_category_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="146" parent="11" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="147" parent="11" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="148" parent="11" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="149" parent="11" name="channel_icon">
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)|0</data-type>
+      </column>
+      <column id="150" parent="11" name="identify">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <index id="151" parent="11" name="lunchback_channel_channel_category_id_foreign">
+        <columns>channel_category_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="152" parent="11" name="lunchback_channel_owner_id_foreign">
+        <columns>owner_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="153" parent="11" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="154" parent="11" name="lunchback_channel_owner_id_foreign">
+        <columns>owner_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="155" parent="11" name="lunchback_channel_channel_category_id_foreign">
+        <columns>channel_category_id</columns>
+        <ref-key>~.lunchback_channel_category.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="156" parent="12" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="157" parent="12" name="category_name">
+        <data-type>varchar(200)|0</data-type>
+      </column>
+      <column id="158" parent="12" name="category_description">
+        <data-type>varchar(500)|0</data-type>
+      </column>
+      <column id="159" parent="12" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="160" parent="12" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="161" parent="12" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <key id="162" parent="12" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="163" parent="13" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="164" parent="13" name="owner_id">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="165" parent="13" name="channel_id">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="166" parent="13" name="code">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <column id="167" parent="13" name="timeused">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="168" parent="13" name="max_usage">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="169" parent="13" name="expire_date">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <column id="170" parent="13" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="171" parent="13" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="172" parent="13" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="173" parent="13" name="lunchback_channel_code_channel_id_foreign">
+        <columns>channel_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="174" parent="13" name="lunchback_channel_code_owner_id_foreign">
+        <columns>owner_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="175" parent="13" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="176" parent="13" name="lunchback_channel_code_owner_id_foreign">
+        <columns>owner_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="177" parent="13" name="lunchback_channel_code_channel_id_foreign">
+        <columns>channel_id</columns>
+        <ref-key>~.lunchback_channel.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="178" parent="14" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="179" parent="14" name="fromName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="180" parent="14" name="fromId">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="181" parent="14" name="fromImage">
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)|0</data-type>
+      </column>
+      <column id="182" parent="14" name="toId">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="183" parent="14" name="message">
+        <mandatory>1</mandatory>
+        <data-type>varchar(1000)|0</data-type>
+      </column>
+      <column id="184" parent="14" name="type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)|0</data-type>
+      </column>
+      <column id="185" parent="14" name="status">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)|0</data-type>
+        <default-expression>&apos;unsend&apos;</default-expression>
+      </column>
+      <column id="186" parent="14" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="187" parent="14" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="188" parent="14" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <key id="189" parent="14" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="190" parent="15" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="191" parent="15" name="event_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="192" parent="15" name="channel_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="193" parent="15" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="194" parent="15" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="195" parent="15" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="196" parent="15" name="lunchback_event_channel_map_channel_id_foreign">
+        <columns>channel_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="197" parent="15" name="lunchback_event_channel_map_event_id_foreign">
+        <columns>event_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="198" parent="15" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="199" parent="15" name="lunchback_event_channel_map_event_id_foreign">
+        <columns>event_id</columns>
+        <ref-key>~.lunchback_events.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="200" parent="15" name="lunchback_event_channel_map_channel_id_foreign">
+        <columns>channel_id</columns>
+        <ref-key>~.lunchback_channel.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="201" parent="16" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="202" parent="16" name="from_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="203" parent="16" name="event_date">
+        <mandatory>1</mandatory>
+        <data-type>date|0</data-type>
+      </column>
+      <column id="204" parent="16" name="status">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)|0</data-type>
+      </column>
+      <column id="205" parent="16" name="event_type">
+        <data-type>varchar(10)|0</data-type>
+        <default-expression>&apos;FREE&apos;</default-expression>
+      </column>
+      <column id="206" parent="16" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="207" parent="16" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="208" parent="16" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="209" parent="16" name="lunch_time">
+        <data-type>varchar(5)|0</data-type>
+      </column>
+      <column id="210" parent="16" name="restaurant">
+        <data-type>text|0</data-type>
+      </column>
+      <index id="211" parent="16" name="lunchback_events_from_id_foreign">
+        <columns>from_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="212" parent="16" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="213" parent="16" name="lunchback_events_from_id_foreign">
+        <columns>from_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="214" parent="17" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="215" parent="17" name="event_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="216" parent="17" name="request_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="217" parent="17" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="218" parent="17" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="219" parent="17" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="220" parent="17" name="lunchback_events_requests_event_id_foreign">
+        <columns>event_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="221" parent="17" name="lunchback_events_requests_request_id_foreign">
+        <columns>request_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="222" parent="17" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="223" parent="17" name="lunchback_events_requests_event_id_foreign">
+        <columns>event_id</columns>
+        <ref-key>~.lunchback_events.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="224" parent="17" name="lunchback_events_requests_request_id_foreign">
+        <columns>request_id</columns>
+        <ref-key>~.lunchback_requests.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="225" parent="18" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="226" parent="18" name="from_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="227" parent="18" name="event_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="228" parent="18" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="229" parent="18" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="230" parent="18" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="231" parent="18" name="rate">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="232" parent="18" name="feedback">
+        <mandatory>1</mandatory>
+        <data-type>varchar(500)|0</data-type>
+      </column>
+      <column id="233" parent="18" name="type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <index id="234" parent="18" name="lunchback_feedbacks_event_id_foreign">
+        <columns>event_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="235" parent="18" name="lunchback_feedbacks_from_id_foreign">
+        <columns>from_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="236" parent="18" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="237" parent="18" name="lunchback_feedbacks_from_id_foreign">
+        <columns>from_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="238" parent="18" name="lunchback_feedbacks_event_id_foreign">
+        <columns>event_id</columns>
+        <ref-key>~.lunchback_events.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="239" parent="19" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="240" parent="19" name="user_id">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="241" parent="19" name="code">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <column id="242" parent="19" name="timeused">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="243" parent="19" name="max_usage">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="244" parent="19" name="expire_date">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <column id="245" parent="19" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="246" parent="19" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="247" parent="19" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="248" parent="19" name="lunchback_invite_code_user_id_foreign">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="249" parent="19" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="250" parent="19" name="lunchback_invite_code_user_id_foreign">
+        <columns>user_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="251" parent="20" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="252" parent="20" name="paid">
+        <data-type>int(1)|0</data-type>
+      </column>
+      <column id="253" parent="20" name="signup_date">
+        <data-type>datetime|0</data-type>
+      </column>
+      <key id="254" parent="20" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="255" parent="21" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="256" parent="21" name="from_id">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="257" parent="21" name="to_id">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="258" parent="21" name="send_mail">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="259" parent="21" name="send_notification">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="260" parent="21" name="message_type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)|0</data-type>
+        <default-expression>&apos;system&apos;</default-expression>
+      </column>
+      <column id="261" parent="21" name="message">
+        <mandatory>1</mandatory>
+        <data-type>varchar(500)|0</data-type>
+      </column>
+      <column id="262" parent="21" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="263" parent="21" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="264" parent="21" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="265" parent="21" name="params">
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)|0</data-type>
+      </column>
+      <index id="266" parent="21" name="lunchback_messages_from_id_foreign">
+        <columns>from_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="267" parent="21" name="lunchback_messages_to_id_foreign">
+        <columns>to_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="268" parent="21" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="269" parent="21" name="lunchback_messages_from_id_foreign">
+        <columns>from_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="270" parent="21" name="lunchback_messages_to_id_foreign">
+        <columns>to_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="271" parent="22" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="272" parent="22" name="first_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)|0</data-type>
+      </column>
+      <column id="273" parent="22" name="last_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)|0</data-type>
+      </column>
+      <column id="274" parent="22" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)|0</data-type>
+      </column>
+      <column id="275" parent="22" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)|0</data-type>
+      </column>
+      <column id="276" parent="22" name="country">
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)|0</data-type>
+      </column>
+      <column id="277" parent="22" name="region">
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)|0</data-type>
+      </column>
+      <column id="278" parent="22" name="city">
+        <data-type>date|0</data-type>
+      </column>
+      <column id="279" parent="22" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="280" parent="22" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="281" parent="22" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <key id="282" parent="22" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="283" parent="23" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="284" parent="23" name="channel_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="285" parent="23" name="email_identity">
+        <data-type>varchar(250)|0</data-type>
+      </column>
+      <column id="286" parent="23" name="verification_code">
+        <data-type>varchar(10)|0</data-type>
+      </column>
+      <column id="287" parent="23" name="email_verified">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="288" parent="23" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="289" parent="23" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="290" parent="23" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="291" parent="23" name="lunchback_private_member_channel_id_foreign">
+        <columns>channel_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="292" parent="23" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="293" parent="23" name="lunchback_private_member_channel_id_foreign">
+        <columns>channel_id</columns>
+        <ref-key>~.lunchback_channel.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="294" parent="24" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="295" parent="24" name="event_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="296" parent="24" name="from_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="297" parent="24" name="status">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)|0</data-type>
+      </column>
+      <column id="298" parent="24" name="tagline">
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)|0</data-type>
+      </column>
+      <column id="299" parent="24" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="300" parent="24" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="301" parent="24" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="302" parent="24" name="channel_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="303" parent="24" name="buy">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="304" parent="24" name="return_message">
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)|0</data-type>
+      </column>
+      <index id="305" parent="24" name="lunchback_requests_event_id_foreign">
+        <columns>event_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="306" parent="24" name="lunchback_requests_from_id_foreign">
+        <columns>from_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="307" parent="24" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="308" parent="24" name="lunchback_requests_event_id_foreign">
+        <columns>event_id</columns>
+        <ref-key>~.lunchback_events.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="309" parent="24" name="lunchback_requests_from_id_foreign">
+        <columns>from_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="310" parent="25" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="311" parent="25" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="312" parent="25" name="channel_id">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="313" parent="25" name="search_type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)|0</data-type>
+      </column>
+      <column id="314" parent="25" name="search_content">
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)|0</data-type>
+      </column>
+      <column id="315" parent="25" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="316" parent="25" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="317" parent="25" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="318" parent="25" name="lunchback_search_history_user_id_foreign">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="319" parent="25" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="320" parent="25" name="lunchback_search_history_user_id_foreign">
+        <columns>user_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="321" parent="26" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="322" parent="26" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="323" parent="26" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="324" parent="26" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="325" parent="26" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <key id="326" parent="26" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="327" parent="27" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="328" parent="27" name="value">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="329" parent="27" name="type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <column id="330" parent="27" name="count">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="331" parent="27" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="332" parent="27" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="333" parent="27" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <key id="334" parent="27" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="335" parent="28" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="336" parent="28" name="city">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="337" parent="28" name="country">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="338" parent="28" name="class">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="339" parent="28" name="image">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="340" parent="28" name="location_search_string">
+        <data-type>varchar(2048)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="341" parent="28" name="latitude">
+        <data-type>decimal(18,15)|0</data-type>
+      </column>
+      <column id="342" parent="28" name="longitude">
+        <data-type>decimal(18,15)|0</data-type>
+      </column>
+      <column id="343" parent="28" name="radius">
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;100&apos;</default-expression>
+      </column>
+      <column id="344" parent="28" name="active">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="345" parent="28" name="sorting">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="346" parent="28" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="347" parent="28" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="348" parent="28" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <key id="349" parent="28" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="350" parent="29" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="351" parent="29" name="count">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="352" parent="29" name="tag">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="353" parent="29" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="354" parent="29" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="355" parent="29" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <key id="356" parent="29" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="357" parent="30" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="358" parent="30" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="359" parent="30" name="channel_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="360" parent="30" name="code_used">
+        <data-type>varchar(20)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="361" parent="30" name="active">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <column id="362" parent="30" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="363" parent="30" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="364" parent="30" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="365" parent="30" name="lunchback_user_channel_map_channel_id_foreign">
+        <columns>channel_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="366" parent="30" name="lunchback_user_channel_map_user_id_foreign">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="367" parent="30" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="368" parent="30" name="lunchback_user_channel_map_user_id_foreign">
+        <columns>user_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="369" parent="30" name="lunchback_user_channel_map_channel_id_foreign">
+        <columns>channel_id</columns>
+        <ref-key>~.lunchback_channel.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="370" parent="31" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="371" parent="31" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="372" parent="31" name="mon">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="373" parent="31" name="tue">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="374" parent="31" name="wed">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="375" parent="31" name="thu">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="376" parent="31" name="fri">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="377" parent="31" name="sat">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="378" parent="31" name="sun">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="379" parent="31" name="repeat">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="380" parent="31" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="381" parent="31" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="382" parent="31" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="383" parent="31" name="lunchback_user_event_setting_user_id_foreign">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="384" parent="31" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="385" parent="31" name="lunchback_user_event_setting_user_id_foreign">
+        <columns>user_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="386" parent="32" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="387" parent="32" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="388" parent="32" name="target_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="389" parent="32" name="interested">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <column id="390" parent="32" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="391" parent="32" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="392" parent="32" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="393" parent="32" name="lunchback_user_interested_user_target_id_foreign">
+        <columns>target_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="394" parent="32" name="lunchback_user_interested_user_user_id_foreign">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="395" parent="32" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="396" parent="32" name="lunchback_user_interested_user_user_id_foreign">
+        <columns>user_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="397" parent="32" name="lunchback_user_interested_user_target_id_foreign">
+        <columns>target_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="398" parent="33" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="399" parent="33" name="user_id">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="400" parent="33" name="invited_by">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="401" parent="33" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="402" parent="33" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="403" parent="33" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="404" parent="33" name="lunchback_user_invited_by_user_id_foreign">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="405" parent="33" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="406" parent="33" name="lunchback_user_invited_by_user_id_foreign">
+        <columns>user_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="407" parent="34" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="408" parent="34" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="409" parent="34" name="target_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="410" parent="34" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="411" parent="34" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="412" parent="34" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="413" parent="34" name="lunchback_user_poke_target_id_foreign">
+        <columns>target_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="414" parent="34" name="lunchback_user_poke_user_id_foreign">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="415" parent="34" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="416" parent="34" name="lunchback_user_poke_user_id_foreign">
+        <columns>user_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="417" parent="34" name="lunchback_user_poke_target_id_foreign">
+        <columns>target_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="418" parent="35" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="419" parent="35" name="app_user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="420" parent="35" name="external_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <column id="421" parent="35" name="type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)|0</data-type>
+      </column>
+      <column id="422" parent="35" name="first_name">
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <column id="423" parent="35" name="last_name">
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <column id="424" parent="35" name="headline">
+        <data-type>varchar(200)|0</data-type>
+      </column>
+      <column id="425" parent="35" name="jobs">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="426" parent="35" name="email">
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="427" parent="35" name="phone">
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <column id="428" parent="35" name="city">
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="429" parent="35" name="profile_url">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="430" parent="35" name="img_url">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="431" parent="35" name="description">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="432" parent="35" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="433" parent="35" name="max_requests">
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;5&apos;</default-expression>
+      </column>
+      <column id="434" parent="35" name="max_accepted_requests">
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;20&apos;</default-expression>
+      </column>
+      <column id="435" parent="35" name="max_free_days">
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;10&apos;</default-expression>
+      </column>
+      <column id="436" parent="35" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="437" parent="35" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="438" parent="35" name="base_city">
+        <data-type>varchar(50)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="439" parent="35" name="latitude">
+        <data-type>decimal(18,15)|0</data-type>
+      </column>
+      <column id="440" parent="35" name="longitude">
+        <data-type>decimal(18,15)|0</data-type>
+      </column>
+      <column id="441" parent="35" name="radius">
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;100&apos;</default-expression>
+      </column>
+      <column id="442" parent="35" name="location_setting">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <index id="443" parent="35" name="lunchback_user_profiles_app_user_id_foreign">
+        <columns>app_user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="444" parent="35" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="445" parent="35" name="lunchback_user_profiles_app_user_id_foreign">
+        <columns>app_user_id</columns>
+        <ref-key>~.applications_users.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="446" parent="36" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="447" parent="36" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="448" parent="36" name="status">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)|0</data-type>
+      </column>
+      <column id="449" parent="36" name="job">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="450" parent="36" name="apply">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="451" parent="36" name="handled">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="452" parent="36" name="liked">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="453" parent="36" name="viewed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="454" parent="36" name="requested">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="455" parent="36" name="score">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="456" parent="36" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="457" parent="36" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="458" parent="36" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="459" parent="36" name="large_img_url">
+        <mandatory>1</mandatory>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="460" parent="36" name="default_restaurant">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="461" parent="36" name="lunch_time">
+        <data-type>varchar(5)|0</data-type>
+      </column>
+      <index id="462" parent="36" name="lunchback_user_profiles_extension_user_id_unique">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="463" parent="36" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="464" parent="36" name="lunchback_user_profiles_extension_user_id_unique">
+        <columns>user_id</columns>
+        <underlying-index>lunchback_user_profiles_extension_user_id_unique</underlying-index>
+      </key>
+      <foreign-key id="465" parent="36" name="lunchback_user_profiles_extension_user_id_foreign">
+        <columns>user_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="466" parent="37" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="467" parent="37" name="user_id">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="468" parent="37" name="recommended_user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="469" parent="37" name="weight">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="470" parent="37" name="type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)|0</data-type>
+        <default-expression>&apos;static&apos;</default-expression>
+      </column>
+      <column id="471" parent="37" name="reason">
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)|0</data-type>
+      </column>
+      <column id="472" parent="37" name="valid_from_date">
+        <data-type>date|0</data-type>
+      </column>
+      <column id="473" parent="37" name="expire_date">
+        <data-type>date|0</data-type>
+      </column>
+      <column id="474" parent="37" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="475" parent="37" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="476" parent="37" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="477" parent="37" name="channel_id">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <key id="478" parent="37" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="479" parent="38" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="480" parent="38" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="481" parent="38" name="skill">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="482" parent="38" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="483" parent="38" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="484" parent="38" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="485" parent="38" name="lunchback_user_skills_user_id_foreign">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="486" parent="38" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="487" parent="38" name="lunchback_user_skills_user_id_foreign">
+        <columns>user_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="488" parent="39" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="489" parent="39" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="490" parent="39" name="message_check_time">
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="491" parent="39" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="492" parent="39" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="493" parent="39" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="494" parent="39" name="lunchback_user_status_user_id_foreign">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="495" parent="39" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="496" parent="39" name="lunchback_user_status_user_id_foreign">
+        <columns>user_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="497" parent="40" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="498" parent="40" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="499" parent="40" name="tag_type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)|0</data-type>
+        <default-expression>&apos;empty&apos;</default-expression>
+      </column>
+      <column id="500" parent="40" name="tag">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="501" parent="40" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="502" parent="40" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="503" parent="40" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="504" parent="40" name="lunchback_user_tags_user_id_foreign">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="505" parent="40" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="506" parent="40" name="lunchback_user_tags_user_id_foreign">
+        <columns>user_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="507" parent="41" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="508" parent="41" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="509" parent="41" name="target_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="510" parent="41" name="view_type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)|0</data-type>
+      </column>
+      <column id="511" parent="41" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="512" parent="41" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="513" parent="41" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="514" parent="41" name="lunchback_view_history_user_id_foreign">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="515" parent="41" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="516" parent="41" name="lunchback_view_history_user_id_foreign">
+        <columns>user_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="517" parent="42" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="518" parent="42" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="519" parent="42" name="run_on">
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <key id="520" parent="42" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="521" parent="43" name="migration">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="522" parent="43" name="batch">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="523" parent="44" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="524" parent="44" name="user_profile_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="525" parent="44" name="first_name">
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <column id="526" parent="44" name="last_name">
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <column id="527" parent="44" name="email">
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="528" parent="44" name="sent">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <index id="529" parent="44" name="user_profile_id">
+        <columns>user_profile_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="530" parent="44" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="531" parent="44" name="newsletter_lunchback_magic_promotion_ibfk_1">
+        <columns>user_profile_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="532" parent="45" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="533" parent="45" name="user_profile_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="534" parent="45" name="first_name">
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <column id="535" parent="45" name="last_name">
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <column id="536" parent="45" name="email">
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="537" parent="45" name="sent">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <index id="538" parent="45" name="user_profile_id">
+        <columns>user_profile_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="539" parent="45" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="540" parent="45" name="newsletter_users_requested_for_code_ibfk_1">
+        <columns>user_profile_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="541" parent="46" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="542" parent="46" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="543" parent="46" name="first_name">
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <column id="544" parent="46" name="last_name">
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <column id="545" parent="46" name="email">
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="546" parent="46" name="profile_url">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="547" parent="46" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <column id="548" parent="46" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="549" parent="46" name="sent">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <index id="550" parent="46" name="user_id">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="551" parent="46" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="552" parent="46" name="newsletter_users_without_code_notification_ibfk_1">
+        <columns>user_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="553" parent="47" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="554" parent="47" name="user_profile_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="555" parent="47" name="first_name">
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <column id="556" parent="47" name="last_name">
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <column id="557" parent="47" name="email">
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="558" parent="47" name="sent">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <index id="559" parent="47" name="user_profile_id">
+        <columns>user_profile_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="560" parent="47" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="561" parent="47" name="newsletter_welcome_message_ibfk_1">
+        <columns>user_profile_id</columns>
+        <ref-key>~.lunchback_user_profiles.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="562" parent="48" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="563" parent="48" name="app_user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="564" parent="48" name="platform">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="565" parent="48" name="notification_token">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="566" parent="48" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="567" parent="48" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="568" parent="48" name="push_notifications_app_user_id_foreign">
+        <columns>app_user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="569" parent="48" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="570" parent="48" name="push_notifications_app_user_id_foreign">
+        <columns>app_user_id</columns>
+        <ref-key>~.applications_users.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="571" parent="49" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="572" parent="49" name="path">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="573" parent="49" name="filename">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="574" parent="49" name="ticket">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="575" parent="49" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="576" parent="49" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="577" parent="49" name="resources_path_filename_unique">
+        <columns>path
+filename</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="578" parent="49" name="resources_ticket_unique">
+        <columns>ticket</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="579" parent="49" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="580" parent="49" name="resources_path_filename_unique">
+        <columns>path
+filename</columns>
+        <underlying-index>resources_path_filename_unique</underlying-index>
+      </key>
+      <key id="581" parent="49" name="resources_ticket_unique">
+        <columns>ticket</columns>
+        <underlying-index>resources_ticket_unique</underlying-index>
+      </key>
+      <column id="582" parent="50" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="583" parent="50" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="584" parent="50" name="interface">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="585" parent="50" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="586" parent="50" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <key id="587" parent="50" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="588" parent="51" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="589" parent="51" name="app_user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="590" parent="51" name="token">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="591" parent="51" name="valid_until">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="592" parent="51" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="593" parent="51" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="594" parent="51" name="sessions_app_user_id_foreign">
+        <columns>app_user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="595" parent="51" name="sessions_token_unique">
+        <columns>token</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="596" parent="51" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="597" parent="51" name="sessions_token_unique">
+        <columns>token</columns>
+        <underlying-index>sessions_token_unique</underlying-index>
+      </key>
+      <foreign-key id="598" parent="51" name="sessions_app_user_id_foreign">
+        <columns>app_user_id</columns>
+        <ref-key>~.applications_users.PRIMARY</ref-key>
+        <cascade-update-rule>update</cascade-update-rule>
+        <cascade-delete-rule>delete</cascade-delete-rule>
+      </foreign-key>
+      <column id="599" parent="52" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="600" parent="52" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)|0</data-type>
+      </column>
+      <index id="601" parent="52" name="id">
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="602" parent="52" name="id_2">
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="603" parent="52" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="604" parent="52" name="id">
+        <columns>id</columns>
+        <underlying-index>id</underlying-index>
+      </key>
+      <column id="605" parent="53" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="606" parent="53" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="607" parent="53" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="608" parent="53" name="activated">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="609" parent="53" name="activation_code">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="610" parent="53" name="activated_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="611" parent="53" name="last_login">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="612" parent="53" name="persist_code">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="613" parent="53" name="reset_password_code">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="614" parent="53" name="first_name">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="615" parent="53" name="last_name">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="616" parent="53" name="permissions">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="617" parent="53" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="618" parent="53" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="619" parent="53" name="users_activation_code_index">
+        <columns>activation_code</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="620" parent="53" name="users_email_unique">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="621" parent="53" name="users_reset_password_code_index">
+        <columns>reset_password_code</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="622" parent="53" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="623" parent="53" name="users_email_unique">
+        <columns>email</columns>
+        <underlying-index>users_email_unique</underlying-index>
+      </key>
+      <column id="624" parent="54" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="625" parent="54" name="application_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="626" parent="54" name="from_id">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="627" parent="54" name="to_ids">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="628" parent="54" name="send_mail">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="629" parent="54" name="send_notification">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="630" parent="54" name="message_type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)|0</data-type>
+        <default-expression>&apos;system&apos;</default-expression>
+      </column>
+      <column id="631" parent="54" name="message">
+        <mandatory>1</mandatory>
+        <data-type>varchar(1000)|0</data-type>
+      </column>
+      <column id="632" parent="54" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="633" parent="54" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="634" parent="54" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <key id="635" parent="54" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="636" parent="55" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="637" parent="55" name="app_user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="638" parent="55" name="external_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <column id="639" parent="55" name="type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)|0</data-type>
+      </column>
+      <column id="640" parent="55" name="first_name">
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <column id="641" parent="55" name="last_name">
+        <data-type>varchar(25)|0</data-type>
+      </column>
+      <column id="642" parent="55" name="headline">
+        <data-type>varchar(200)|0</data-type>
+      </column>
+      <column id="643" parent="55" name="jobs">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="644" parent="55" name="email">
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="645" parent="55" name="phone">
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <column id="646" parent="55" name="city">
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="647" parent="55" name="profile_url">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="648" parent="55" name="img_url">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="649" parent="55" name="removed">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="650" parent="55" name="max_requests">
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;5&apos;</default-expression>
+      </column>
+      <column id="651" parent="55" name="max_accepted_requests">
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;20&apos;</default-expression>
+      </column>
+      <column id="652" parent="55" name="max_free_days">
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;10&apos;</default-expression>
+      </column>
+      <column id="653" parent="55" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="654" parent="55" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="655" parent="55" name="base_city">
+        <data-type>varchar(50)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="656" parent="55" name="latitude">
+        <data-type>decimal(18,15)|0</data-type>
+      </column>
+      <column id="657" parent="55" name="longitude">
+        <data-type>decimal(18,15)|0</data-type>
+      </column>
+      <column id="658" parent="55" name="radius">
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;100&apos;</default-expression>
+      </column>
+    </database-model>
+  </data-source>
+  <data-source name="MySQL - jdbc:mysql://localhost:8889/Last FM" uuid="0fdf2136-cc0f-44fe-b677-50f71a707e5f">
+    <database-info product="MySQL" version="5.6.33" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="Last FM">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="information_schema"/>
+      <schema id="3" name="mysql"/>
+      <schema id="4" name="performance_schema"/>
+    </database-model>
+  </data-source>
+</component>

@@ -1,51 +1,3 @@
-<?php
-
-require("config.php");
-$submitted_username = '';
-if(!empty($_POST)){
-    $query = " 
-            SELECT 
-                external_id as password
-            FROM lunchback_user_profiles 
-            WHERE 
-                email = :username 
-        ";
-    $query_params = array(
-        ':username' => $_POST['username']
-    );
-
-    try{
-        $stmt = $db->prepare($query);
-        $result = $stmt->execute($query_params);
-    }
-    catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
-    $login_ok = false;
-    $row = $stmt->fetch();
-    if($row){
-        /*$check_password = hash('sha256', $_POST['password'] . $row['salt']);
-        for($round = 0; $round < 65536; $round++){
-            $check_password = hash('sha256', $check_password . $row['salt']);
-        }*/
-        $check_password = $_POST['password'];
-        if($check_password === $row['password']){
-            $login_ok = true;
-        }
-    }
-
-    if($login_ok){
-        unset($row['password']);
-        $_SESSION['user'] = $row;
-        header("Location: dashboard.php");
-        die("Redirecting to: dashboard.php");
-    }
-    else{
-        print("Login Failed.");
-        $submitted_username = htmlentities($_POST['username'], ENT_QUOTES, 'UTF-8');
-    }
-}
-
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -176,32 +128,15 @@ if(!empty($_POST)){
     <div class="section">
         <div class="container tim-container" style="max-width:800px; padding-top:100px">
             <h1 class="text-center">Right here can you login and edit your magic status<small class="subtitle">This is like a small motto before the story.</small></h1>
+            <?php
+            require_once('config.php');
 
-            <div class="login-form-1">
-                <form id="login-form" class="text-left" method="post">
-                    <div class="login-form-main-message"></div>
-                    <div class="main-login-form">
-                        <div class="login-group">
-                            <div class="form-group">
-                                <label for="lg_username" class="sr-only">Username</label>
-                                <input type="text" class="form-control" id="lg_username" name="username" placeholder="Enter your username" value="<?php echo $submitted_username; ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="lg_password" class="sr-only">Password</label>
-                                <input type="password" class="form-control" id="lg_password" name="password" placeholder="Enter password" value=="">
-                            </div>
-                            <div class="form-group login-group-checkbox">
-                                <input type="checkbox" id="lg_remember" name="lg_remember">
-                                <label for="lg_remember">remember</label>
-                            </div>
-                        </div>
-                        <button type="submit" class="login-button btn btn-round btn-default" value="Login">Enter</button>
-                    </div>
-                    <div class="etc-login-form">
-                        <p>forgot your password? <a href="#">click here</a></p>
-                    </div>
-                </form>
-            </div>
+            echo '<a href="https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id='.$config['Client_ID'].'&redirect_uri='.$config['callback_url'].'&state=98765EeFWf45A53sdfKef4233&scope=r_basicprofile r_emailaddress"><img src="./images/linkedin_connect_button.png" alt="Sign in with LinkedIn" align="middle"/></a>';
+            ?>
+
+
+
+
             <!--     end extras -->
         </div>
         </div>

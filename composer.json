@@ -1,5 +1,0 @@
-{
-    "require": {
-        "league/oauth2-linkedin": "^0.4.1"
-    }
-}

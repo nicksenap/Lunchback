@@ -1,0 +1,9 @@
+https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=758m4fest8djkc&redirect_uri=https://lunchback.net/index.html&state=987654321&scope=r_basicprofile
+
+https://api.linkedin.com/v1/people/~:(id,first-name,last-name,headline,picture-url,industry,summary,specialties,positions:(id,title,summary,start-date,end-date,is-current,company:(id,name,type,size,industry,ticker)),educations:(id,school-name,field-of-study,start-date,end-date,degree,activities,notes),associations,interests,num-recommenders,date-of-birth,publications:(id,title,publisher:(name),authors:(id,name),date,url,summary),patents:(id,title,summary,number,status:(id,name),office:(name),inventors:(id,name),date,url),languages:(id,language:(name),proficiency:(level,name)),skills:(id,skill:(name)),certifications:(id,name,authority:(name),number,start-date,end-date),courses:(id,name,number),recommendations-received:(id,recommendation-type,recommendation-text,recommender),honors-awards,three-current-positions,three-past-positions,volunteer)?oauth2_access_token=AQUwpO-N_Ousfq20elsYoncSc-VVWLo9LgQ3j4Fxenu7CH-2_77f3FvZi5MFh2MbmlaSqyoY54Dw24QiEYcERYTv0bwET3YW2wSXI9Qq1fUlRpWQlAQ5D439BwUxIgm1U4fLQB4o7oPkpZ7VN5E8EmiOD2Umrvn8mnovpGhrtSE0XZws4YQ&format=json
+
+https://lunchback.net/index.html?code=AQSiP88lsn6eWbYSCTZynIqwg3V3uxHdLCa6PK-dpOoArbHv8VMg7flxS8tG0kEPgjGNCUU4ksstLJbJv7EYR1TvD6cymMMSTOFkqENgTUy0W7JLwbk&state=581fc6b656c4e2%2E24707367#!
+
+https://lunchback.net/index.html?code=AQT4hmzGh_UYhFAqm81mGCNCmDnKd5mK15S_yUlXueDH1MD_PjTM_k4SOIKD2yjOiKLxMZkDPBXjPst3ir-Az2mByMYGyJlpAeoQUo1cLCmKIFi3abs&state=581fc744bec492%2E69913227#!
+
+AQUwpO-N_Ousfq20elsYoncSc-VVWLo9LgQ3j4Fxenu7CH-2_77f3FvZi5MFh2MbmlaSqyoY54Dw24QiEYcERYTv0bwET3YW2wSXI9Qq1fUlRpWQlAQ5D439BwUxIgm1U4fLQB4o7oPkpZ7VN5E8EmiOD2Umrvn8mnovpGhrtSE0XZws4YQ

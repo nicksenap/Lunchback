@@ -1,13 +1,13 @@
-
 <?php
+ini_set('error_reporting', E_ALL);
 $config = include('config.php');
-// Change these
-define('API_KEY',      $config['api_key']);
-define('API_SECRET',   $config['secret_key']);
-define('REDIRECT_URI', $config['callbackURL']);
-define('SCOPE',        $config['linkedinScope']);
 
-$API_KEY = $api_key;
+// Change these
+define('API_KEY',      $api_key);
+define('API_SECRET',   $secret_key);
+define('REDIRECT_URI', $callbackURL);
+define('SCOPE',        $linkedinScope);
+
 
 // You'll probably use a database
 session_name('linkedin');
@@ -31,16 +31,18 @@ if (isset($_GET['error'])) {
     if ((empty($_SESSION['expires_at'])) || (time() > $_SESSION['expires_at'])) {
         // Token has expired, clear the state
         $_SESSION = array();
+
     }
     if (empty($_SESSION['access_token'])) {
         // Start authorization process
         getAuthorizationCode();
     }
 }
-
-// Congratulations! You have a valid token. Now fetch your profile 
+// Congratulations! You have a valid token. Now fetch your profile
 $user = fetch('GET', '/v1/people/~:(id,first-name,last-name,headline,email-address,picture-url,industry,site-standard-profile-request,interests,summary,main-address,phone-numbers,skills:(skill))');
-var_dump($user);die;
+var_dump($user);
+die;
+
 
 function getAuthorizationCode() {
     $params = array('response_type' => 'code',
@@ -49,29 +51,27 @@ function getAuthorizationCode() {
         'state' => uniqid('', true), // unique long string
         'redirect_uri' => REDIRECT_URI,
     );
-
     // Authentication request
     $url = 'https://www.linkedin.com/uas/oauth2/authorization?' . http_build_query($params);
-
+    // print_r($url);
     // Needed to identify request when it returns to us
     $_SESSION['state'] = $params['state'];
-
     // Redirect user to authenticate
     header("Location: $url");
     exit;
+
 }
 
 function getAccessToken() {
     $params = array('grant_type' => 'authorization_code',
         'client_id' => API_KEY,
         'client_secret' => API_SECRET,
-        'code' => $_GET['code'],
+         //'code' => $_GET['code'],
+        'code' => 'AQQEhMFuvW87RkydiMhTFS2-caedNxsRX8nLN2E_Iv9LPjAy3gu5k52taRBVw9HNpaY7UC3uNhjvhbE2l_x4_yjN5IedSOwCTCSZuHa9Y_3w8N5xrHk',
         'redirect_uri' => REDIRECT_URI,
     );
-
     // Access Token request
     $url = 'https://www.linkedin.com/uas/oauth2/accessToken?' . http_build_query($params);
-
     // Tell streams to make a POST request
     $context = stream_context_create(
         array('http' =>
@@ -90,7 +90,7 @@ function getAccessToken() {
     $_SESSION['access_token'] = $token->access_token; // guard this! 
     $_SESSION['expires_in']   = $token->expires_in; // relative time (in seconds)
     $_SESSION['expires_at']   = time() + $_SESSION['expires_in']; // absolute time
-
+    //print_r($_SESSION);
     return true;
 }
 

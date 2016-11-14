@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - vssf_core@127.0.0.1" uuid="cd504e91-90ff-4807-afc6-eafa937a844c">
+      <secret-storage>master_key</secret-storage>
+      <user-name>lunchback</user-name>
+      <introspection-scope>vssf_core:</introspection-scope>
+      <resolve-scope>vssf_core:</resolve-scope>
+    </data-source>
+    <data-source name="MySQL - jdbc:mysql://localhost:8889/Last FM" uuid="0fdf2136-cc0f-44fe-b677-50f71a707e5f">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-scope>Last\u0020FM:</introspection-scope>
+      <resolve-scope>Last\u0020FM:</resolve-scope>
+    </data-source>
+  </component>
+</project>
